@@ -5,7 +5,8 @@ import style from './Search.module.css';
 function Search() {
   const context = useContext(ContextUser);
   const queryUser = context?.user?.query;
-  const [query, setQuery] = useState('');
+  const editUser = context?.editUser;
+  const [query, setQuery] = useState(queryUser || '');
 
   const handleChangeValue = (e) => {
     e.preventDefault();
@@ -13,13 +14,8 @@ function Search() {
     setQuery(valueQuery);
   };
 
-  const getSearch = (e) => {
-    e.preventDefault();
-    console.log(e.currentTarget.value);
-    // TODO logic search
-
-    //?   clear input
-    setQuery('');
+  const getSearch = () => {
+    editUser('query', query);
   };
 
   return (

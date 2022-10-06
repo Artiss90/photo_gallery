@@ -7,7 +7,6 @@
 }
 .idPhoto {
   margin: 0;
-  /* background: rgb(218, 225, 231); */
   background: var(--colorShadow);
   text-align: center;
 }

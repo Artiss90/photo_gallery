@@ -10,6 +10,7 @@ function Homepage() {
   const limit = context?.user?.limit;
   const page = context?.user?.page;
   const [carts, setCarts] = useState([]);
+
   useEffect(() => {
     fetchRandomPhoto({ page: page, limit: limit })
       .then((res) => {
@@ -20,7 +21,7 @@ function Homepage() {
   return (
     <div className={style.container}>
       <ListCarts carts={carts} />
-      <Pagination/>
+      <Pagination />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import Cart from '../Cart/Cart';
 import { ContextUser } from '../Wrapper/Wrapper';
 import style from './FoundCart.module.css';

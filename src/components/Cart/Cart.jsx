@@ -6,7 +6,6 @@ import style from './Cart.module.css';
 import cn from 'classnames';
 
 function Cart({ cartId, cartAlt = '', width = WIDTH_PHOTO, height = HEIGHT_PHOTO, isModal }) {
-  console.log('🚀 ~ file: Cart.jsx ~ line 9 ~ Cart ~ cartId', cartId);
   const context = useContext(ContextUser);
   const onShowModal = context?.setIsShowModal;
   const setCurrentShow = context?.setCurrentShow;

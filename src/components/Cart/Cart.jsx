@@ -19,7 +19,7 @@ function Cart({ cartId, cartAlt = '', width = WIDTH_PHOTO, height = HEIGHT_PHOTO
   return (
     cartId && (
       <div className={style.container}>
-        <img src={urlDownloadBySize} alt={cartAlt} onClick={showModal} />
+        <img src={urlDownloadBySize} alt={cartAlt} onClick={showModal} className={style.img} />
         {!isModal && <ButtonFavorite cart={{ cartId, cartAlt }} />}
       </div>
     )

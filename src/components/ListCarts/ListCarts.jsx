@@ -9,7 +9,7 @@ function ListCarts({ carts }) {
         const altImg = author ? `Photo by ${author}` : author;
         return (
           id && (
-            <li key={id} className={style.container}>
+            <li key={id} className={style.item}>
               <Cart cartId={id} cartAlt={altImg} />
             </li>
           )

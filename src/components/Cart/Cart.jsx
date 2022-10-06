@@ -3,6 +3,7 @@ import { HEIGHT_PHOTO, URL_PHOTO_BY_ID, WIDTH_PHOTO } from '../../constants/cons
 import ButtonFavorite from '../ButtonFavorite/ButtonFavorite';
 import { ContextUser } from '../Wrapper/Wrapper';
 import style from './Cart.module.css';
+import cn from 'classnames';
 
 function Cart({ cartId, cartAlt = '', width = WIDTH_PHOTO, height = HEIGHT_PHOTO, isModal }) {
   const context = useContext(ContextUser);
@@ -18,8 +19,16 @@ function Cart({ cartId, cartAlt = '', width = WIDTH_PHOTO, height = HEIGHT_PHOTO
   const urlDownloadBySize = `${URL_PHOTO_BY_ID}/${cartId}/${width}/${height}`;
   return (
     cartId && (
-      <div className={style.container}>
-        <img src={urlDownloadBySize} alt={cartAlt} onClick={showModal} className={style.img} />
+      <div className={cn(style.container, { [style.large]: isModal })}>
+        <img
+          src={urlDownloadBySize}
+          alt={cartAlt}
+          onClick={showModal}
+          className={style.img}
+          width={width}
+          height={height}
+        />
+        <p className={style.idPhoto}>{`id#${cartId}`}</p>
         {!isModal && <ButtonFavorite cart={{ cartId, cartAlt }} />}
       </div>
     )

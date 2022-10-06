@@ -2,7 +2,27 @@
   display: flex;
   flex-wrap: wrap;
   /* 300px - width photo */
-  width: calc(300px * 5);
+  /* 20px - margin-right */
+  width: calc(300px * 5 + 20px * 4);
   margin-left: auto;
   margin-right: auto;
+}
+.item {
+  margin-right: 20px;
+  margin-top: 20px;
+  box-shadow: 1px 6px 10px 1px var(--colorShadow);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  overflow: hidden;
+  transition: box-shadow 250ms linear;
+}
+.item:hover,
+.item:focus-within {
+  box-shadow: 1px 6px 10px 2px var(--colorShadowActive);
+}
+.item:nth-child(-n + 5) {
+  margin-top: 0;
+}
+.item:nth-child(5n) {
+  margin-right: 0;
 }

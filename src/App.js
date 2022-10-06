@@ -21,7 +21,7 @@ function App() {
       </Routes>
       {isShowModal && currentShow && (
         <Modal>
-          <Cart cartId={currentShow} width="600" height="400" isModal />
+          <Cart cartId={currentShow} width="900" height="600" isModal />
         </Modal>
       )}
     </div>

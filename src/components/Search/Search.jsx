@@ -1,16 +1,16 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { ContextUser } from '../Wrapper/Wrapper';
 import style from './Search.module.css';
 
 function Search() {
+  const context = useContext(ContextUser);
+  const queryUser = context?.user?.query;
   const [query, setQuery] = useState('');
 
   const handleChangeValue = (e) => {
     e.preventDefault();
     const valueQuery = e.currentTarget.value;
-
-    if (valueQuery) {
-      setQuery(valueQuery);
-    }
+    setQuery(valueQuery);
   };
 
   const getSearch = (e) => {
@@ -24,8 +24,15 @@ function Search() {
 
   return (
     <div className={style.container}>
-      <input type="text" name="limitPage" value={query} onChange={handleChangeValue} placeholder="Введіть категорію" />
-      <button type="button" onClick={getSearch}>
+      <input
+        type="number"
+        name="limitPage"
+        value={query}
+        onChange={handleChangeValue}
+        placeholder="Введіть ID"
+        className={style.input}
+      />
+      <button type="button" onClick={getSearch} className={style.btn}>
         Знайти
       </button>
     </div>

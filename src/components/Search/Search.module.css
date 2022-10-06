@@ -1,0 +1,21 @@
+.input {
+  border: 1px solid rgba(145, 234, 228, 0.5);
+  outline: none;
+  background-color: rgba(145, 234, 228, 0.3);
+  margin: 0;
+  margin-right: 10px;
+  padding: 4px 5px;
+}
+.btn {
+  background-color: rgba(145, 234, 228, 0.3);
+  border-color: rgba(134, 168, 231, 0.5);
+  border-style: solid;
+  box-shadow: inset 2px 2px 5px var(--colorShadow), inset -5px -5px 10px var(--colorShadowActive);
+  border-radius: 3px;
+  padding: 5px;
+  transition: box-shadow 250ms linear, color 250ms linear;
+}
+.btn:hover,
+.btn:focus-within {
+  box-shadow: inset 2px 2px 5px var(--colorShadowActive), inset -5px -5px 10px var(--colorShadow);
+}

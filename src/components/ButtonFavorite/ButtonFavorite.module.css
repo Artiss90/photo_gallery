@@ -1,14 +1,15 @@
 .container {
   position: absolute;
   top: 2px;
-  right: 2px;
+  right: 12px;
   background-color: transparent;
   border: none;
   fill: rgba(255, 255, 255, 0.4);
+  transition: fill 500ms linear;
 }
 .container.check {
   fill: rgba(215, 14, 14, 0.7);
 }
 .container:hover {
-  fill: rgb(255, 215, 0);
+  fill: var(--colorShadowActive);
 }

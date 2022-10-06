@@ -5,10 +5,10 @@ function Navigation() {
   return (
     <nav className={style.container}>
       <ul className={style.list}>
-        <li>
+        <li className={style.item}>
           <Link to="/">Головна сторінка</Link>
         </li>
-        <li>
+        <li className={style.item}>
           <Link to="/favorites">Улюблені фото</Link>
         </li>
       </ul>

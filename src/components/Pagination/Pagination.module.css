@@ -16,4 +16,21 @@
   border-color: transparent;
   outline: none;
   cursor: pointer;
+  background-color: rgba(134, 168, 231, 0.9);
+  transition: box-shadow 250ms linear, color 250ms linear;
+}
+.btn:hover,
+.btn:focus-within {
+  box-shadow: 3px 2px 10px 1px var(--colorShadowActive);
+  color: var(--colorShadowActive);
+}
+.btn[disabled] {
+  background-color: rgba(134, 168, 231, 0.6);
+  color: rgba(0, 0, 0, 0.4);
+}
+.btn[disabled]:hover,
+.btn[disabled]:focus-within {
+  box-shadow: none;
+  color: rgba(0, 0, 0, 0.4);
+  cursor: auto;
 }

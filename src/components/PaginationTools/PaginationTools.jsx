@@ -18,9 +18,15 @@ function PaginationTools() {
 
   return (
     <div className={style.container}>
-      <label>
+      <label className={style.label}>
         Кількість фото на сторінці
-        <input type="number" name="limitPage" value={userLimitContext} onChange={handleChangeValue} />
+        <input
+          type="number"
+          name="limitPage"
+          value={userLimitContext}
+          onChange={handleChangeValue}
+          className={style.input}
+        />
       </label>
     </div>
   );

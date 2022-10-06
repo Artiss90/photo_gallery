@@ -1,7 +1,21 @@
 .container {
-  width: 33%;
+  width: 20%;
 }
 .list {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+.item a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  background-color: rgba(145, 234, 228, 0.3);
+  border-color: rgba(134, 168, 231, 0.5);
+  border-style: solid;
+  box-shadow: inset 2px 2px 5px var(--colorShadow), inset -5px -5px 10px var(--colorShadowActive);
+  border-radius: 10px;
+  transition: box-shadow 250ms linear, color 250ms linear;
+}
+.item a:hover,
+.item a:focus-within {
+  box-shadow: inset 2px 2px 5px var(--colorShadowActive), inset -5px -5px 10px var(--colorShadow);
 }

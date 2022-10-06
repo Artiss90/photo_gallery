@@ -25,17 +25,27 @@ function Pagination() {
   return (
     <ul className={style.list}>
       <li className={style.item}>
-        <button className={style.btn} type="button" onClick={() => onChangePage(`${numPage - 2}`)}>
+        <button
+          className={style.btn}
+          type="button"
+          onClick={() => onChangePage(`${numPage - 2}`)}
+          disabled={page === 1}
+        >
           {numPage - 2}
         </button>
       </li>
       <li className={style.item}>
-        <button className={style.btn} type="button" onClick={() => onChangePage(`${numPage - 1}`)}>
+        <button
+          className={style.btn}
+          type="button"
+          onClick={() => onChangePage(`${numPage - 1}`)}
+          disabled={page === 2}
+        >
           {numPage - 1}
         </button>
       </li>
       <li className={style.item}>
-        <button className={style.btn} type="button" onClick={() => onChangePage(`${numPage}`)} disabled>
+        <button className={style.btn} type="button" onClick={() => onChangePage(`${numPage}`)} disabled={page >= 3}>
           {numPage}
         </button>
       </li>

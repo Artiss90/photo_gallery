@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { fetchRandomPhoto } from '../../services/services';
 import ListCarts from '../ListCarts/ListCarts';
+import Pagination from '../Pagination/Pagination';
 import { ContextUser } from '../Wrapper/Wrapper';
 import style from './Homepage.module.css';
 
@@ -19,6 +20,7 @@ function Homepage() {
   return (
     <div className={style.container}>
       <ListCarts carts={carts} />
+      <Pagination/>
     </div>
   );
 }

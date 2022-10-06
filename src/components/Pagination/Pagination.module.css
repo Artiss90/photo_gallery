@@ -1,0 +1,20 @@
+.list {
+  position: fixed;
+  z-index: var(--zIndexPagination);
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+.item {
+}
+.btn {
+  width: 50px;
+  height: 50px;
+  padding: 7px;
+  border-radius: 3px;
+  border-color: transparent;
+  outline: none;
+}

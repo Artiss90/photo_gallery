@@ -1,18 +1,18 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+import { ContextUser } from '../Wrapper/Wrapper';
 import style from './PaginationTools.module.css';
 
-const limitUser = localStorage.getItem('limit');
-
 function PaginationTools() {
-  const [limit, setLimit] = useState(limitUser || 30);
+  const context = useContext(ContextUser);
+  const userLimitContext = context?.user?.limit || 30;
+  const updateUser = context?.editUser;
 
   const handleChangeValue = (e) => {
     e.preventDefault();
     const valueLimit = e.currentTarget.value;
 
     if (valueLimit) {
-      setLimit(valueLimit);
-      localStorage.setItem('limit', valueLimit);
+      updateUser('limit', valueLimit);
     }
   };
 
@@ -20,7 +20,7 @@ function PaginationTools() {
     <div className={style.container}>
       <label>
         Кількість фото на сторінці
-        <input type="number" name="limitPage" value={limit} onChange={handleChangeValue} />
+        <input type="number" name="limitPage" value={userLimitContext} onChange={handleChangeValue} />
       </label>
     </div>
   );

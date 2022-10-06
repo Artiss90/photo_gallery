@@ -5,11 +5,10 @@ function ListCarts({ carts }) {
   return (
     <ul className={style.container}>
       {carts.map((cart) => {
-        const { id, download_url, author } = cart;
+        const { id, author } = cart;
         const altImg = author ? `Photo by ${author}` : author;
         return (
-          id &&
-          download_url && (
+          id && (
             <li key={id} className={style.container}>
               <Cart cartId={id} cartAlt={altImg} />
             </li>

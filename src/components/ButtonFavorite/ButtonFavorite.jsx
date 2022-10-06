@@ -4,10 +4,13 @@ import icon from '../../icons/symbol-defs.svg';
 import style from './ButtonFavorite.module.css';
 import cn from 'classnames';
 
-function ButtonFavorite({ cartId }) {
+function ButtonFavorite({ cart }) {
+  const { cartId, cartAlt } = cart;
+  // ? поскольку записуемы в избранные карточки с фото переиспользуются, то поля должны быть указаны также как и с хоста picsum
+  const correctCart = { id: cartId, author: cartAlt };
   const context = useContext(ContextUser);
   const favorites = context?.user?.favorites || [];
-  const [isCheck, setIsCheck] = useState(favorites.includes(cartId));
+  const [isCheck, setIsCheck] = useState(favorites.some((cart) => cart.id === cartId));
   const editUser = context?.editUser;
 
   function onCheckFavorite() {
@@ -15,9 +18,9 @@ function ButtonFavorite({ cartId }) {
     let copyFavorites = favorites.slice();
     //*если фото не находится в избранных - добавляем, иначе - удаляем оттуда
     if (!isCheck) {
-      copyFavorites.push(cartId);
+      copyFavorites.push(correctCart);
     } else {
-      copyFavorites = copyFavorites.filter((item) => item !== cartId);
+      copyFavorites = copyFavorites.filter((cart) => cart.id !== cartId);
     }
     editUser('favorites', copyFavorites);
   }

@@ -4,7 +4,7 @@ import ButtonFavorite from '../ButtonFavorite/ButtonFavorite';
 import { ContextUser } from '../Wrapper/Wrapper';
 import style from './Cart.module.css';
 
-function Cart({ cartId, alt = '', width = WIDTH_PHOTO, height = HEIGHT_PHOTO }) {
+function Cart({ cartId, cartAlt = '', width = WIDTH_PHOTO, height = HEIGHT_PHOTO, isModal }) {
   const context = useContext(ContextUser);
   const onShowModal = context?.setIsShowModal;
   const setCurrentShow = context?.setCurrentShow;
@@ -19,8 +19,8 @@ function Cart({ cartId, alt = '', width = WIDTH_PHOTO, height = HEIGHT_PHOTO }) 
   return (
     cartId && (
       <div className={style.container}>
-        <img src={urlDownloadBySize} alt={alt} onClick={showModal} />
-        <ButtonFavorite cartId={cartId} />
+        <img src={urlDownloadBySize} alt={cartAlt} onClick={showModal} />
+        {!isModal && <ButtonFavorite cart={{ cartId, cartAlt }} />}
       </div>
     )
   );

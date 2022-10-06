@@ -8,6 +8,8 @@ export const ContextUser = React.createContext(undefined);
 
 const Wrapper = ({ children }) => {
   const [user, setUser] = useState(initialUser);
+  const [isShowModal, setIsShowModal] = useState(false);
+  const [currentShow, setCurrentShow] = useState(null);
 
   const editUser = (property, value) => {
     //? смотрим есть ли свойство, тогда изменяем
@@ -25,7 +27,11 @@ const Wrapper = ({ children }) => {
     }
   };
 
-  return <ContextUser.Provider value={{ user, editUser }}>{children}</ContextUser.Provider>;
+  return (
+    <ContextUser.Provider value={{ user, editUser, isShowModal, setIsShowModal, currentShow, setCurrentShow }}>
+      {children}
+    </ContextUser.Provider>
+  );
 };
 
 export default Wrapper;
